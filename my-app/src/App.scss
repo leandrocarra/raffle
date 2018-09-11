@@ -1,17 +1,18 @@
+//https://www.kalunga.com.br/prod/cartela-para-rifa-com-50-nomes-tamoio/154637#&gid=null&pid=1
 .raffle {
   max-width: 340px;
   min-width: 320px;
   margin: 0 auto;
-  padding: 0 10px; }
-
+  padding: 0 10px;
+}
 .raffle__top {
   background-color: #F385B2;
   height: 50px;
   position: relative;
   z-index: 1;
-  box-shadow: 0 8px 6px -6px rgba(68, 68, 68, 0.6); }
-
-.raffle__top-rings, .raffle__top-rings--right {
+  box-shadow: 0 8px 6px -6px rgba(68,68,68,0.6);
+}
+.raffle__top-rings {
   width: 10px;
   height: 10px;
   border-radius: 50%;
@@ -21,12 +22,13 @@
   left: -50px;
   top: 12px;
   padding: 3px;
-  box-shadow: 0px 0px 1px 2px rgba(0, 0, 0, 0.3); }
-
+  box-shadow: 0px 0px 1px 2px rgba(0, 0, 0, 0.3);
+}
 .raffle__top-rings--right {
+  @extend .raffle__top-rings;
   left: 50px;
-  top: -16px; }
-
+  top: -16px;
+}
 .raffle__top-rings--inside {
   border: 1px solid #5E4B1F;
   width: 10px;
@@ -36,8 +38,9 @@
   padding: 3px;
   position: relative;
   left: -4px;
-  top: -4px; }
-
+  top: -4px;
+}
 .raffle__wrapper {
   background-color: #EE87B4;
-  height: 100vh; }
+  height: 100vh;
+}

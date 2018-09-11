@@ -1,18 +1,19 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Rifona BRUTA</h1>
-        </header>
-        <p className="App-intro">
-          iniciando rifa online
-        </p>
+      <div className="raffle">
+        <div className="raffle__top">
+          <div className="raffle__top-rings">
+            <div className="raffle__top-rings--inside"></div>
+          </div>
+          <div className="raffle__top-rings--right">
+            <div className="raffle__top-rings--inside"></div>
+          </div>
+        </div>
+        <div className="raffle__wrapper"></div>
       </div>
     );
   }
