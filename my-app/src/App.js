@@ -5,7 +5,7 @@ class App extends Component {
   render() {
     function repeate(){
       for (let i = 0; i < 40; i++) {
-        console.log('teste')
+
       }
     };
     return (
