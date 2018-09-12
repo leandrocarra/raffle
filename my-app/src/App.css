@@ -1,11 +1,10 @@
 .raffle {
-  max-width: 340px;
+  max-width: 390px;
   min-width: 320px;
-  margin: 0 auto;
-  padding: 0 10px; }
+  margin: 0 auto; }
 
 .raffle__top {
-  background-color: #F385B2;
+  background-color: #D5DCE0;
   height: 50px;
   position: relative;
   z-index: 1;
@@ -39,5 +38,103 @@
   top: -4px; }
 
 .raffle__wrapper {
-  background-color: #EE87B4;
-  height: 100vh; }
+  background-color: #D4E0DC;
+  padding: 0 10px;
+  padding-bottom: 20px;
+  margin-top: -50px;
+  padding-top: 50px; }
+
+.raffle__box, .raffle__title-card, .raffle__reward {
+  background-color: #FAFAF8;
+  border: 2px solid #000;
+  padding: 5px;
+  text-align: center;
+  border-radius: 10px; }
+
+.raffle__title-card {
+  margin-top: 15px;
+  line-height: 28px;
+  padding-top: 10px; }
+
+.raffle__big-text {
+  font-size: 40px;
+  letter-spacing: 15px;
+  text-shadow: 2px 0px #000; }
+
+.raffle__normal-text {
+  font-size: 30px;
+  letter-spacing: 5px;
+  text-shadow: 2px 0px #000; }
+
+.raffle__reward {
+  margin-top: 10px;
+  padding: 15px;
+  position: relative;
+  background-color: #FAFAF8; }
+
+.raffle__title-reward {
+  font-weight: 700; }
+
+.raffle__title-description {
+  font-size: 14px;
+  position: absolute;
+  top: 12px;
+  right: 13%; }
+
+.raffle__wrapper-genders {
+  margin-top: 10px;
+  overflow: hidden;
+  padding: 0;
+  text-align: center; }
+  .raffle__wrapper-genders ul {
+    overflow: hidden; }
+    .raffle__wrapper-genders ul li {
+      border-right: 2px solid #000;
+      border-bottom: 2px solid #000;
+      width: 50%;
+      height: 50px;
+      float: left;
+      margin-left: -2px;
+      padding-top: 10px; }
+
+.raffle__wrapper-girl {
+  width: 50%;
+  float: left; }
+  .raffle__wrapper-girl ul {
+    background-color: #F977AB;
+    border-radius: 0 10px 10px 0;
+    border-top: 2px solid #000;
+    border-right: 2px solid #000; }
+  .raffle__wrapper-girl li:nth-child(2n) {
+    border-right: 0 none;
+    margin-right: -2px;
+    margin-left: 0; }
+
+.raffle__wrapper-boy {
+  width: 50%;
+  float: left; }
+  .raffle__wrapper-boy ul {
+    background-color: #71BAE2;
+    border-radius: 10px 0 0 10px;
+    border-top: 2px solid #000;
+    border-left: 2px solid #000; }
+
+.raffle__name {
+  font-weight: 700;
+  font-size: 12px;
+  display: block;
+  margin-bottom: 5px; }
+
+.raffle__familiar {
+  font-size: 12px;
+  width: 90%;
+  display: block;
+  margin: 0 auto; }
+
+.raffle__radio {
+  position: absolute;
+  width: 0;
+  height: 0; }
+
+.raffle__selected {
+  background-color: rgba(69, 69, 69, 0.8); }
