@@ -105,6 +105,10 @@
       float: left;
       margin-left: -2px;
       padding-top: 10px;
+      label {
+        display: block;
+        height: 33px;
+      }
     }
   }
 }

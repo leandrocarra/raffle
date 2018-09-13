@@ -96,6 +96,9 @@
       float: left;
       margin-left: -2px;
       padding-top: 10px; }
+      .raffle__wrapper-genders ul li label {
+        display: block;
+        height: 33px; }
 
 .raffle__wrapper-girl {
   width: 50%;
