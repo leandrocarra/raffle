@@ -1,0 +1,82 @@
+
+.raffle__wrapper-genders {
+  margin-top: 10px;
+  overflow: hidden;
+  padding: 0;
+  text-align: center;
+  ul {
+    overflow: hidden;
+    li {
+      border-right: 2px solid #000;
+      border-bottom: 2px solid #000;
+      width: 50%;
+      height: 50px;
+      float: left;
+      margin-left: -2px;
+      padding-top: 10px;
+      label {
+        display: block;
+        height: 33px;
+      }
+    }
+  }
+}
+
+.raffle__wrapper-girl {
+  width: 50%;
+  float: left;
+  ul {
+    background-color: #F977AB;
+    border-radius: 0 10px 10px 0;
+    border-top: 2px solid #000;
+    border-right: 2px solid #000;
+  }
+  li:nth-child(2n){
+    border-right: 0 none;
+    margin-right: -2px;
+    margin-left: 0;
+  }
+}
+
+.raffle__wrapper-boy {
+  width: 50%;
+  float: left;
+  ul {
+    background-color: #71BAE2;
+    border-radius: 10px 0 0 10px;
+    border-top: 2px solid #000;
+    border-left: 2px solid #000;
+  }
+}
+
+.raffle__name {
+  font-weight: 700;
+  font-size: 12px;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.raffle__familiar {
+  font-size: 12px;
+  width: 90%;
+  display: block;
+  margin: 0 auto;
+}
+
+.raffle__radio {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+
+.raffle__selected {
+  background-color: rgba(255,255,255, 0.7);
+  label {
+    color: rgba(0,0,0, 0.7);
+  }
+}

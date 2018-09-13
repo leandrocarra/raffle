@@ -1,0 +1,59 @@
+.raffle-login {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background-color: #fff;
+  z-index: 10;
+  opacity: .8;
+  z-index: 5;
+}
+.raffle-login__container {
+  position: fixed;
+  top: 50%;
+  min-width: 320px;
+  max-width: 353px;
+  height: 180px;
+  padding: 8px;
+  margin: 0 auto;
+  background-color: #061F3E;
+  z-index: 10;
+  margin-top: -90px;
+  right: 0;
+  left: 0;
+    svg{
+      width: 50%;
+      height: 50%;
+    }
+}
+.raffle-login__container-input {
+  background-color: #DDE1E7;
+  border-radius: 4px;
+  overflow: hidden;
+  padding: 15px 10px;
+}
+
+.raffle-login__fields {
+  padding: 8px 4px;
+  margin-right: 5px;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2) inset;
+  border: 1px solid rgb(199, 202, 205);
+  outline: 0 none;
+  border-radius: 4px;
+
+  placeholder {
+    color: #BFC2C7;
+  }
+}
+.raffle-login__submit {
+  position: relative;
+  z-index: 0;
+  padding: 8px 21px;
+  margin-left: -12px;
+  background-color: #FE6601;
+  border-radius: 4px;
+  color: #fff;
+  text-shadow: -1px 0px #000;
+  outline: 0 none;
+}
