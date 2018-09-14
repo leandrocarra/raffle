@@ -11,7 +11,7 @@ class App extends Component {
   render() {
     return (
       <div className="raffle">
-
+        <RaffleLogin/>
         <RaffleTop/>
         <div className="raffle__wrapper">
           <RaffleReward/>

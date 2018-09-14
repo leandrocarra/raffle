@@ -41,15 +41,17 @@
 
 .raffle__name {
   font-weight: 700;
-  font-size: 12px;
+  font-size: 14px;
   display: block;
-  margin-bottom: 5px; }
+  margin-bottom: 5px;
+  font-family: monospace; }
 
 .raffle__familiar {
   font-size: 12px;
   width: 90%;
   display: block;
-  margin: 0 auto; }
+  margin: 0 auto;
+  font-family: cursive; }
 
 .raffle__radio {
   position: absolute;
