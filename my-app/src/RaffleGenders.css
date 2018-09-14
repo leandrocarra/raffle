@@ -12,7 +12,8 @@
       height: 50px;
       float: left;
       margin-left: -2px;
-      padding-top: 10px; }
+      padding-top: 10px;
+      overflow: hidden; }
       .raffle__wrapper-genders ul li label {
         display: block;
         height: 33px; }
