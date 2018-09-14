@@ -9,23 +9,27 @@ class RaffleLogin extends Component {
         <div className="raffle-login"></div>
         <div className="raffle-login__container">
           <IconLogin/>
+          <div className="raffle-login__name">
+            Qual é o seu nome?
+          </div>
           <div className="raffle-login__container-input">
-            <input
-              className="raffle-login__fields"
-              type="text"
-              name="name"
-              placeholder="NOME"/>
+            <span className="raffle-login__fields-content">
+              <input
+                className="raffle-login__fields"
+                type="text"
+                name="name"
+                placeholder="NOME"/>
 
-            <input
-              className="raffle-login__fields"
-              type="text"
-              name="nickName"
-              placeholder="SOBRENOME"/>
-
+              <input
+                className="raffle-login__fields"
+                type="text"
+                name="nickName"
+                placeholder="SOBRENOME"/>
+            </span>
             <input
               className="raffle-login__submit"
               type="submit"
-              value="OK"/>
+              value="&#8594;"/>
           </div>
         </div>
       </span>
