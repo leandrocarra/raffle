@@ -1,6 +1,6 @@
-const Todo = require('./todo')
+const Raffle = require('./raffle')
 
-Todo.methods(['get','post','put','delete'])
-Todo.updateOptions({new: true, runValidators: true})
+Raffle.methods(['get','post','put','delete'])
+Raffle.updateOptions({new: true, runValidators: true})
 
-module.exports = Todo
+module.exports = Raffle
