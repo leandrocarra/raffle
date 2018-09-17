@@ -1,9 +1,12 @@
 .raffle-floater__shadow {
-  background-color: rgba(0,0,0, 0.4);
-  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  height: 200vh;
   width: 100vw;
   position: absolute;
   top: 0;
+  max-width: 390px;
+  min-width: 320px;
+  margin: 0 auto;
 }
 .raffle-floater {
   position: fixed;
