@@ -1,6 +1,8 @@
 
 # Created by https://www.gitignore.io/api/node,macos,python,reactnative,visualstudiocode
 
+keys.js
+
 ### macOS ###
 *.DS_Store
 .AppleDouble
