@@ -2,7 +2,7 @@ const restful = require('node-restful')
 const mongoose = restful.mongoose
 
 const raffleSchema = new mongoose.Schema({
-  name: {
+  named: {
     type: String,
     required: true
   },
