@@ -10,5 +10,5 @@ module.exports = function(server) {
   // })
   //
   const raffleService = require('../api/service')
-  raffleService.register(router, '/teste')
+  raffleService.register(router, '/raffle')
 }
