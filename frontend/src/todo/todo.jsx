@@ -74,20 +74,18 @@ export default class Todo extends Component {
 
   render(){
     return(
-      <div>
+      <span>
         <TodoForm
+          list={this.state.list}
+          handleMarkAsDone={this.handleMarkAsDone}
+          handleMarkAsPending={this.handleMarkAsPending}
           handleChange={this.handleChange}
           handleAdd={this.handleAdd}
           description={this.state.description}
           handleSearch={this.handleSearch}
           handleClear={this.handleClear}
           />
-        <TodoList
-          list={this.state.list}
-          handleMarkAsDone={this.handleMarkAsDone}
-          handleMarkAsPending={this.handleMarkAsPending}
-        />
-      </div>
+      </span>
     )
   }
 }
