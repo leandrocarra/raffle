@@ -1,7 +1,6 @@
 import React from 'react'
-import Grid from '../template/grid'
 import IconButton from '../template/iconButton'
-import RaffleFloater from './RaffleFloater'
+
 
 export default props => {
   const renderRows = () => {
@@ -34,6 +33,7 @@ export default props => {
 
   return (
     <span>
+
       <div className="raffle__wrapper">
         <div className="raffle__wrapper-genders">
           <div className="raffle__wrapper-boy">
