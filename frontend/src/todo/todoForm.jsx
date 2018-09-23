@@ -5,14 +5,11 @@ export default props => {
   const renderRows = () => {
     const list = props.list || []
     return list.map(todo => (
-      <li className={todo.done ? 'raffle__selected' : ''}
-          key={todo._id}
-          onClick={()=> props.handleMarkAsDone(todo)}
-          >
+      <li className={todo.done ? 'raffle__selected' : ''} key={todo._id}>
         <span className="raffle__effect"></span>
         <label htmlFor={todo.description}>
           <p className="raffle__name">{todo.description}</p>
-          <small className="raffle__familiar">Livia Patrezze</small>
+          <small className="raffle__familiar">{todo.parent ? todo.parent : 'vazio'}</small>
         </label>
         <input
           className="raffle__radio"
@@ -21,6 +18,7 @@ export default props => {
           value={todo.description}
           name="boyName">
         </input>
+        <span></span>
       </li>
     ))
   }
@@ -35,22 +33,13 @@ export default props => {
 
   return (
     <span>
-
       <div className="raffle__wrapper">
         <div className="raffle__wrapper-genders">
           <div className="raffle__wrapper-boy">
             <ul>
-
-
-
-            {renderRows()}
-
-
-
-
-
-
-              {/* <li className='raffle__select' >
+              {renderRows()}
+              {/*
+              <li className='raffle__select' >
                 <span className="raffle__effect"></span>
                 <label htmlFor='EDUARDO'>
                   <p className="raffle__name">EDUARDO</p>
@@ -68,60 +57,7 @@ export default props => {
                   >
                 </input>
               </li>
-              <li className='raffle__select' >
-                <span className="raffle__effect"></span>
-                <label htmlFor='BRUNA'>
-                  <p className="raffle__name">BRUNA</p>
-                  <small className="raffle__familiar">Livia Patrezze</small>
-                </label>
-                <input
-                  id='BRUNA'
-                  className="raffle__radio"
-                  placeholder='task here'
-                  value={'BRUNA'}
-                  onChange={props.handleChange}
-                  onKeyUp={keyHandler}
-                  type="radio"
-                  name="boyName"
-                  >
-                </input>
-              </li>
-              <li className='raffle__select' >
-                <span className="raffle__effect"></span>
-                <label htmlFor='OLIVIA'>
-                  <p className="raffle__name">OLIVIA</p>
-                  <small className="raffle__familiar">Livia Patrezze</small>
-                </label>
-                <input
-                  id='OLIVIA'
-                  className="raffle__radio"
-                  placeholder='task here'
-                  value={'OLIVIA'}
-                  onChange={props.handleChange}
-                  onKeyUp={keyHandler}
-                  type="radio"
-                  name="boyName"
-                  >
-                </input>
-              </li>
-              <li className='raffle__select' >
-                <span className="raffle__effect"></span>
-                <label htmlFor='FIRME'>
-                  <p className="raffle__name">FIRME</p>
-                  <small className="raffle__familiar">Livia Patrezze</small>
-                </label>
-                <input
-                  id='FIRME'
-                  className="raffle__radio"
-                  placeholder='task here'
-                  value={'FIRME'}
-                  onChange={props.handleChange}
-                  onKeyUp={keyHandler}
-                  type="radio"
-                  name="boyName"
-                  >
-                </input>
-              </li>*/}
+              */}
             </ul>
           </div>
           <div className="raffle__wrapper-girl">

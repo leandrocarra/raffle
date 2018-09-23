@@ -35,9 +35,9 @@ class App extends Component {
           <RaffleReward/>
           <RaffleGenders/>
         </div>
-         <RaffleFloater
-            handleAdd={this.handleAdd}
-         />
+         {/*<RaffleFloater*/}
+            {/*handleAdd={this.handleAdd}*/}
+         {/*/>*/}
         {/* <RaffleConfirmed/> */}
       </div>
     );

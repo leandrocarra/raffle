@@ -19,8 +19,9 @@ class RaffleGenders extends Component {
                 id="ALEXANDRE"
                 name="boyName">
               </input>
+              <span></span>
             </li>
-            <li className="raffle__selected">
+            <li className="">
               <span className="raffle__effect"></span>
               <label htmlFor="ARTHUR">
                 <p className="raffle__name">ARTHUR</p>
@@ -32,6 +33,7 @@ class RaffleGenders extends Component {
                 id="ARTHUR"
                 name="boyName">
               </input>
+              <span></span>
             </li>
             <li className="">
             <span className="raffle__effect"></span>
@@ -45,6 +47,7 @@ class RaffleGenders extends Component {
                 id="BENICIO"
                 name="boyName">
               </input>
+              <span></span>
             </li>
             <li className="">
             <span className="raffle__effect"></span>

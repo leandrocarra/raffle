@@ -39,6 +39,8 @@
     border-radius: 10px 0 0 10px;
     border-top: 2px solid #000;
     border-left: 2px solid #000; }
+    .raffle__wrapper-boy ul li {
+      position: relative; }
 
 .raffle__name {
   font-weight: 700;
@@ -77,3 +79,11 @@
 .raffle__wrapper-boy .raffle__effect {
   width: 98%;
   left: 2%; }
+
+input[type="radio"]:checked + span {
+  background-color: rgba(255, 255, 255, 0.5);
+  position: absolute;
+  width: 100%;
+  height: 61px;
+  left: 0;
+  top: 0; }
