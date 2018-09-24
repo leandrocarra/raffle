@@ -19,7 +19,12 @@ export default class Todo extends Component {
   constructor(props) {
     super(props)
 
-    this.state = { description: 'description', list: [] }
+    this.state = {
+      description: 'description',
+      list: [],
+      boyName: 'Benino',
+      girlName: 'benina'
+    }
 
     this.handleChange = this.handleChange.bind(this)
     this.handleSearch = this.handleSearch.bind(this)
@@ -27,8 +32,7 @@ export default class Todo extends Component {
     this.handleMarkAsPending = this.handleMarkAsPending.bind(this)
     this.handleAdd = this.handleAdd.bind(this)
     this.handleRemove = this.handleRemove.bind(this)
-    this.handleSetStorage = this.handleSetStorage.bind(this)
-    this.handleGetStorage = this.handleGetStorage.bind(this)
+    this.setBoyName = this.setBoyName.bind(this)
 
     this.refresh()
 
@@ -72,15 +76,12 @@ export default class Todo extends Component {
       .then(resp => this.refresh(this.state.description))
   }
 
-  handleSetStorage(todo) {
-    localStorage.setItem(todo._id, todo.description);
-    // this.handleGetStorage(todo)
+  setBoyName(todo) {
+    this.setState({ boyName: todo.description })
   }
 
-  handleGetStorage(todo) {
-    let storaged = localStorage.getItem(todo._id);
-    console.log(storaged)
-    return storaged
+  setGirlName(todo) {
+    this.setState({ girlName: todo.description })
   }
 
   render(){
@@ -95,8 +96,10 @@ export default class Todo extends Component {
           description={this.state.description}
           handleSearch={this.handleSearch}
           handleClear={this.handleClear}
-          handleSetStorage={this.handleSetStorage}
-          handleGetStorage={this.handleGetStorage}
+          setGirlName={this.setGirlName}
+          setBoyName={this.setBoyName}
+          boyName={this.state.boyName}
+          girlName={this.state.girlName}
           />
       </span>
     )

@@ -9,11 +9,7 @@ export default props => {
       <li className={
         todo.done ? 'raffle__selected' : ''}
         key={todo._id}
-        onClick={
-            ()=>{ props.handleSetStorage(todo);
-            ()=> props.handleGetStorage(todo)
-          }
-        }
+        onClick={ ()=> props.setBoyName(todo)}
         >
         <span className="raffle__effect"></span>
         <label htmlFor={todo.description}>
@@ -84,10 +80,10 @@ export default props => {
         <p className="raffle-floater__title">CONFIRMAÇÃO</p>
         <div className="raffle-floater__content">
           <div className="raffle-floater__confirm-boy">
-              {props.hand}
+              {props.boyName}
           </div>
           <div className="raffle-floater__confirm-girl">
-              MANOELA
+              {props.girlName}
           </div>
         </div>
         <IconButton
