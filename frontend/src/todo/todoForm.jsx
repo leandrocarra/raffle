@@ -2,10 +2,19 @@ import React from 'react'
 import IconButton from '../template/iconButton'
 
 export default props => {
+
   const renderRows = () => {
     const list = props.list || []
     return list.map(todo => (
-      <li className={todo.done ? 'raffle__selected' : ''} key={todo._id}>
+      <li className={
+        todo.done ? 'raffle__selected' : ''}
+        key={todo._id}
+        onClick={
+            ()=>{ props.handleSetStorage(todo);
+            ()=> props.handleGetStorage(todo)
+          }
+        }
+        >
         <span className="raffle__effect"></span>
         <label htmlFor={todo.description}>
           <p className="raffle__name">{todo.description}</p>
@@ -75,7 +84,7 @@ export default props => {
         <p className="raffle-floater__title">CONFIRMAÇÃO</p>
         <div className="raffle-floater__content">
           <div className="raffle-floater__confirm-boy">
-              ALEXANDRE
+              {props.hand}
           </div>
           <div className="raffle-floater__confirm-girl">
               MANOELA
