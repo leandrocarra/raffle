@@ -18,6 +18,10 @@ const todoSchema = new mongoose.Schema({
   parent: {
     type: String,
     required: true
+  },
+  gender: {
+    type: String,
+    required: true
   }
 })
 

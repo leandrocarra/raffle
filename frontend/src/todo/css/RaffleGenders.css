@@ -8,15 +8,29 @@
     .raffle__wrapper-genders ul li {
       border-right: 2px solid #000;
       border-bottom: 2px solid #000;
-      width: 50%;
+      /*width: 25%;*/
+      width: calc(25% - 2px);
       height: 50px;
       float: left;
-      margin-left: -2px;
       padding-top: 10px;
       overflow: hidden; }
       .raffle__wrapper-genders ul li label {
         display: block;
         height: 33px; }
+
+.raffle__wrapper-boy li:nth-child(4n) {
+  background-color: #F977AB;
+}
+.raffle__wrapper-boy li:nth-child(4) {
+  border-radius: 0 10px 0px 0;
+}
+.raffle__wrapper-boy li:nth-child(80) {
+  border-radius: 0 0 10px 0;
+}
+.raffle__wrapper-boy li:nth-child(4n+3) {
+  background-color: #F977AB;
+}
+
 
 .raffle__wrapper-girl {
   width: 50%;
@@ -31,12 +45,11 @@
     margin-right: -2px;
     margin-left: 0; }
 
-.raffle__wrapper-boy {
-  width: 50%;
-  float: left; }
+
+.raffle__wrapper-boy {}
   .raffle__wrapper-boy ul {
     background-color: #71BAE2;
-    border-radius: 10px 0 0 10px;
+    border-radius: 10px 10px 10px 10px;
     border-top: 2px solid #000;
     border-left: 2px solid #000; }
     .raffle__wrapper-boy ul li {

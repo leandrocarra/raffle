@@ -20,7 +20,8 @@ export default props => {
           id={todo.description}
           onChange={props.handleChange}
           value={todo.description}
-          name="boyName">
+          name={todo.gender}
+        >
         </input>
         <span></span>
       </li>
@@ -34,69 +35,45 @@ export default props => {
           <div className="raffle__wrapper-boy">
             <ul>
               {renderRows()}
-               {/*<li className='raffle__select' >*/}
-                {/*<span className="raffle__effect"></span>*/}
-                {/*<label htmlFor='dddd'>*/}
-                  {/*<p className="raffle__name">dddd</p>*/}
-                  {/*<small className="raffle__familiar">Livia Patrezze</small>*/}
-                {/*</label>*/}
-                {/*<input*/}
-                  {/*id='dddd'*/}
-                  {/*className="raffl__radio"*/}
-                  {/*placeholder='task here'*/}
-                  {/*value={'dddd'}*/}
-                  {/*onChange={props.handleChange}*/}
-                  {/*type="radio"*/}
-                  {/*name="boyName"*/}
-                  {/*>*/}
-                {/*</input>*/}
-              {/*</li>*/}
-              {/*<li className='raffle__select' >*/}
-                {/*<span className="raffle__effect"></span>*/}
-                {/*<label htmlFor='ffff'>*/}
-                  {/*<p className="raffle__name">ffff</p>*/}
-                  {/*<small className="raffle__familiar">Livia Patrezze</small>*/}
-                {/*</label>*/}
-                {/*<input*/}
-                  {/*id='ffff'*/}
-                  {/*className="raffl__radio"*/}
-                  {/*placeholder='task here'*/}
-                  {/*value={'ffff'}*/}
-                  {/*onChange={props.handleChange}*/}
-                  {/*type="radio"*/}
-                  {/*name="girlName"*/}
-                {/*>*/}
-                {/*</input>*/}
-              {/*</li>*/}
-            </ul>
-          </div>
-          <div className="raffle__wrapper-girl">
-            <ul>
-              <li className="raffle__selected">
-                FEMALE
+              <li className='raffle__select' >
+                <span className="raffle__effect"></span>
+                <label htmlFor='m'>
+                  <p className="raffle__name">m</p>
+                  <small className="raffle__familiar">Livia Patrezze</small>
+                </label>
+                <input
+                  id='m'
+                  className="raffl__radio"
+                  placeholder='task here'
+                  value={'m'}
+                  onChange={props.handleChange}
+                  type="radio"
+                  name="girlName"
+                >
+                </input>
               </li>
             </ul>
           </div>
         </div>
       </div>
        {/*<div className="raffle-floater__shadow"></div>*/}
-      <div className="raffle-floater">
-        <span className="raffle-floater__close">X</span>
-        <p className="raffle-floater__title">CONFIRMAÇÃO</p>
-        <div className="raffle-floater__content">
-          <div className="raffle-floater__confirm-boy">
-              {props.boyName}
-          </div>
-          <div className="raffle-floater__confirm-girl">
-              {props.girlName}
-          </div>
-        </div>
-        <IconButton
-            style='raffle-floater__confirm-button'
-            onClick={props.handleAdd}
-            >
-        </IconButton>
-      </div>
+      {/*<div className="raffle-floater">*/}
+        {/*<span className="raffle-floater__close">X</span>*/}
+        {/*<p className="raffle-floater__title">CONFIRMAÇÃO</p>*/}
+        {/*<div className="raffle-floater__content">*/}
+          {/*<div className="raffle-floater__confirm-boy">*/}
+              {/*{props.boyName}*/}
+          {/*</div>*/}
+          {/*<div className="raffle-floater__confirm-girl">*/}
+              {/*{props.girlName}*/}
+          {/*</div>*/}
+        {/*</div>*/}
+        {/*<IconButton*/}
+            {/*style='raffle-floater__confirm-button'*/}
+            {/*onClick={props.handleAdd}*/}
+            {/*>*/}
+        {/*</IconButton>*/}
+      {/*</div>*/}
     </span>
   )
 }
