@@ -10,16 +10,17 @@ class RaffleLogin extends Component {
     }
   }
   render() {
-    const handleSetLoginUser = (e) => {
+    const handleSetLoginName = (e) => {
       let loginUserName = e.target.value;
       this.setState({userName: loginUserName})
     }
     const handleSetLoginSurName = (e) => {
       let loginSurName = e.target.value;
+      this.setState({surName: loginSurName})
     }
-
     const handleSetStorageLogin = () => {
-      console.log(this.state.userName)
+      //console.log(this.state.userName, this.state.surName)
+      localStorage.setItem(this.state.userName, this.state.surName)
     }
 
     return (
@@ -37,14 +38,15 @@ class RaffleLogin extends Component {
                 type="text"
                 name="name"
                 placeholder="NOME"
-                onChange={handleSetLoginUser}
+                onChange={handleSetLoginName}
                 />
-
               <input
                 className="raffle-login__fields"
                 type="text"
                 name="nickName"
-                placeholder="SOBRENOME"/>
+                placeholder="SOBRENOME"
+                onChange={handleSetLoginSurName}
+              />
             </span>
             <input
               className="raffle-login__submit"
