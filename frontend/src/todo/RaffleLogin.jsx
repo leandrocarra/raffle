@@ -3,6 +3,10 @@ import IconLogin from './IconLogin';
 
 class RaffleLogin extends Component {
   render() {
+    const handleSetLoginUser = (e) => {
+      let teste = e.target.value
+      console.log(teste)
+    }
     return (
       <span>
         <div className="raffle-login"></div>
@@ -17,7 +21,9 @@ class RaffleLogin extends Component {
                 className="raffle-login__fields"
                 type="text"
                 name="name"
-                placeholder="NOME"/>
+                placeholder="NOME"
+                onChange={handleSetLoginUser}
+                />
 
               <input
                 className="raffle-login__fields"

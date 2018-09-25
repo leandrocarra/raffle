@@ -9,10 +9,9 @@ export default props => {
       <li className={
         todo.done ? 'raffle__selected' : ''}
         key={todo._id}
-        onClick={ ()=> props.setBoyName(todo)}
         >
         <span className="raffle__effect"></span>
-        <label htmlFor={todo.description}>
+        <label htmlFor={todo.description} onClick={ ()=> props.setBoyName(todo)}>
           <p className="raffle__name">{todo.description}</p>
           <small className="raffle__familiar">{todo.parent ? todo.parent : 'vazio'}</small>
         </label>
@@ -43,26 +42,25 @@ export default props => {
           <div className="raffle__wrapper-boy">
             <ul>
               {renderRows()}
-              {/*
-              <li className='raffle__select' >
+              {/* <li className='raffle__select' >
                 <span className="raffle__effect"></span>
-                <label htmlFor='EDUARDO'>
-                  <p className="raffle__name">EDUARDO</p>
+                <label htmlFor='teste'>
+                  <p className="raffle__name">teste</p>
                   <small className="raffle__familiar">Livia Patrezze</small>
                 </label>
                 <input
-                  id='EDUARDO'
-                  className="raffle__radio"
+                  id='teste'
+                  className="raffl__radio"
                   placeholder='task here'
-                  value={'EDUARDO'}
+                  value={'teste'}
                   onChange={props.handleChange}
                   onKeyUp={keyHandler}
                   type="radio"
                   name="boyName"
                   >
                 </input>
-              </li>
-              */}
+              </li> */}
+
             </ul>
           </div>
           <div className="raffle__wrapper-girl">
@@ -74,7 +72,7 @@ export default props => {
           </div>
         </div>
       </div>
-      {/* <div className="raffle-floater__shadow"></div> */}
+      {/* <div className="raffle-floater__shadow"></div>
       <div className="raffle-floater">
         <span className="raffle-floater__close">X</span>
         <p className="raffle-floater__title">CONFIRMAÇÃO</p>
@@ -91,7 +89,7 @@ export default props => {
             onClick={props.handleAdd}
             >
         </IconButton>
-      </div>
+      </div>*/}
     </span>
   )
 }
