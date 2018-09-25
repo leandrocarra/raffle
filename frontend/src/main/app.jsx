@@ -7,7 +7,7 @@ import Menu from '../template/menu'
 export default props => (
   <div className="raffle">
     <Menu/>
-    <RaffleLogin/>
+    {/*<RaffleLogin/>*/}
     <div className="raffle__wrapper">
       <RaffleReward/>
       <Routes/>

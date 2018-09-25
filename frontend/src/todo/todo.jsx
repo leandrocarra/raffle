@@ -51,13 +51,24 @@ export default class Todo extends Component {
   }
 
   handleChange(e) {
-    this.setState({ ...this.state, description: e.target.value })
+    let name = localStorage.getItem('name')
+    let surName= localStorage.getItem('surName')
+
+    this.setState({
+      description: e.target.value,
+      parent: `${name} ${surName}`
+    })
+    //console.log(this.state.parent)
   }
 
   handleAdd() {
     const description = this.state.description
-    axios.post(URL, {description})
-    .then(resp => this.refresh())
+    const parent = this.state.parent
+    axios.post(URL, {
+      description,
+      parent,
+      done:true})
+      .then(resp => this.refresh())
   }
 
   handleRemove(todo) {
@@ -66,7 +77,7 @@ export default class Todo extends Component {
   }
 
   handleMarkAsDone(todo) {
-    axios.put(`${URL}/${todo._id}`, { ...todo, done:true })
+    axios.put(`${URL}/${todo._id}`, { done:true })
       .then(resp => this.refresh(this.state.description))
   }
 

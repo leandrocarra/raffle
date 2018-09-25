@@ -16,7 +16,8 @@ const todoSchema = new mongoose.Schema({
     default: Date.now
   },
   parent: {
-    type: String
+    type: String,
+    required: true
   }
 })
 

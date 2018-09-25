@@ -20,7 +20,8 @@ class RaffleLogin extends Component {
     }
     const handleSetStorageLogin = () => {
       //console.log(this.state.userName, this.state.surName)
-      localStorage.setItem(this.state.userName, this.state.surName)
+      localStorage.setItem('name', this.state.userName)
+      localStorage.setItem('surName', this.state.surName)
     }
 
     return (

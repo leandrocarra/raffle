@@ -2,7 +2,6 @@ import React from 'react'
 import IconButton from '../template/iconButton'
 
 export default props => {
-
   const renderRows = () => {
     const list = props.list || []
     return list.map(todo => (
@@ -19,20 +18,13 @@ export default props => {
           className="raffle__radio"
           type="radio"
           id={todo.description}
+          onChange={props.handleChange}
           value={todo.description}
           name="boyName">
         </input>
         <span></span>
       </li>
     ))
-  }
-
-  const keyHandler = (e) => {
-    if (e.key === 'Enter') {
-        e.shiftKey ? props.handleSearch() : props.handleAdd()
-    } else if (e.key === 'Escape') {
-      props.handleClear()
-    }
   }
 
   return (
@@ -42,25 +34,40 @@ export default props => {
           <div className="raffle__wrapper-boy">
             <ul>
               {renderRows()}
-              {/* <li className='raffle__select' >
-                <span className="raffle__effect"></span>
-                <label htmlFor='teste'>
-                  <p className="raffle__name">teste</p>
-                  <small className="raffle__familiar">Livia Patrezze</small>
-                </label>
-                <input
-                  id='teste'
-                  className="raffl__radio"
-                  placeholder='task here'
-                  value={'teste'}
-                  onChange={props.handleChange}
-                  onKeyUp={keyHandler}
-                  type="radio"
-                  name="boyName"
-                  >
-                </input>
-              </li> */}
-
+               {/*<li className='raffle__select' >*/}
+                {/*<span className="raffle__effect"></span>*/}
+                {/*<label htmlFor='dddd'>*/}
+                  {/*<p className="raffle__name">dddd</p>*/}
+                  {/*<small className="raffle__familiar">Livia Patrezze</small>*/}
+                {/*</label>*/}
+                {/*<input*/}
+                  {/*id='dddd'*/}
+                  {/*className="raffl__radio"*/}
+                  {/*placeholder='task here'*/}
+                  {/*value={'dddd'}*/}
+                  {/*onChange={props.handleChange}*/}
+                  {/*type="radio"*/}
+                  {/*name="boyName"*/}
+                  {/*>*/}
+                {/*</input>*/}
+              {/*</li>*/}
+              {/*<li className='raffle__select' >*/}
+                {/*<span className="raffle__effect"></span>*/}
+                {/*<label htmlFor='ffff'>*/}
+                  {/*<p className="raffle__name">ffff</p>*/}
+                  {/*<small className="raffle__familiar">Livia Patrezze</small>*/}
+                {/*</label>*/}
+                {/*<input*/}
+                  {/*id='ffff'*/}
+                  {/*className="raffl__radio"*/}
+                  {/*placeholder='task here'*/}
+                  {/*value={'ffff'}*/}
+                  {/*onChange={props.handleChange}*/}
+                  {/*type="radio"*/}
+                  {/*name="girlName"*/}
+                {/*>*/}
+                {/*</input>*/}
+              {/*</li>*/}
             </ul>
           </div>
           <div className="raffle__wrapper-girl">
@@ -72,7 +79,7 @@ export default props => {
           </div>
         </div>
       </div>
-      {/* <div className="raffle-floater__shadow"></div>
+       {/*<div className="raffle-floater__shadow"></div>*/}
       <div className="raffle-floater">
         <span className="raffle-floater__close">X</span>
         <p className="raffle-floater__title">CONFIRMAÇÃO</p>
@@ -89,7 +96,7 @@ export default props => {
             onClick={props.handleAdd}
             >
         </IconButton>
-      </div>*/}
+      </div>
     </span>
   )
 }
