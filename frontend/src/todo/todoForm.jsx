@@ -26,6 +26,11 @@ export default props => {
           onChange={props.handleChange}
           value={todo.description}
           name={todo.gender}
+          onClick={
+            todo.gender !== 'GIRL' ?
+            () => props.toggleChangeBoy() :
+            () => props.toggleChangeGirl()
+          }
         >
         </input>
         <span></span>
@@ -62,9 +67,12 @@ export default props => {
           </div>
         </div>
       </div>
-       {/* <div className="raffle-floater__shadow"></div> */}
-      <div className="raffle-floater">
-        <span className="raffle-floater__close">X</span>
+      {/* <div className="raffle-floater__shadow"></div> */}
+      <div className={`raffle-floater__shadow ${ props.showShadow }`}></div>
+      <div className={`raffle-floater ${ props.showConfirm }`}>
+        <span className="raffle-floater__close"
+        onClick={props.hideConfirmBox}
+        >X</span>
         <p className="raffle-floater__title">CONFIRMAÇÃO</p>
         <div className="raffle-floater__content">
           <div className="raffle-floater__confirm-boy">

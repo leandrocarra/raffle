@@ -7,12 +7,10 @@ class RaffleLogin extends Component {
     this.state = {
       userName: '',
       surName: '',
-      hide: ''
+      hide: 'none'
     }
   }
-  // componentWillMount(){
-  //   displayLogin()
-  // }
+
   render() {
     const handleSetLoginName = (e) => {
       let loginUserName = e.target.value;
@@ -33,13 +31,14 @@ class RaffleLogin extends Component {
           hide: 'none'
         })
       }
+    }
+    const checkUser = () => {
       if (localStorage.getItem('name') !== '' && localStorage.getItem('surName') !== ''){
         this.setState({
           hide: 'none'
         })
       }
     }
-
     return (
       <span className={this.state.hide}>
         <div className="raffle-login"></div>

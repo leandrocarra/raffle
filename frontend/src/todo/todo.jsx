@@ -23,7 +23,11 @@ export default class Todo extends Component {
       list: [],
       boyName: 'Benino',
       girlName: 'benina',
-      nameId: ''
+      nameId: '',
+      boyChecked: false,
+      girlChecked: false,
+      showShadow: 'none',
+      showConfirm: ''
     }
 
     this.handleChange = this.handleChange.bind(this)
@@ -35,12 +39,47 @@ export default class Todo extends Component {
     this.setBoyName = this.setBoyName.bind(this)
     this.setGirlName = this.setGirlName.bind(this)
     this.handleGetId = this.handleGetId.bind(this)
+    this.toggleChangeBoy = this.toggleChangeBoy.bind(this)
+    this.toggleChangeGirl = this.toggleChangeGirl.bind(this)
+    this.showConfirmBox = this.showConfirmBox.bind(this)
+    this.hideConfirmBox = this.hideConfirmBox.bind(this)
 
     this.refresh()
 
     this.handleClear = () => {
       this.refresh();
     }
+  }
+
+  toggleChangeBoy() {
+    // console.log(this.state.boyChecked)
+    this.setState({
+      boyChecked: true
+    },() => this.showConfirmBox())
+
+  }
+
+  toggleChangeGirl() {
+    // console.log(this.state.girlChecked)
+    this.setState({
+      girlChecked: true
+    },() => this.showConfirmBox())
+  }
+
+  showConfirmBox() {
+    if (this.state.boyChecked === true && this.state.girlChecked === true){
+      this.setState({
+        showConfirm: 'raffle-floater__effect',
+        showShadow: 'show'
+      })
+    }
+  }
+
+  hideConfirmBox() {
+    this.setState({
+      showConfirm: '',
+      showShadow: 'none'
+    })
   }
 
   refresh(description = '') {
@@ -55,20 +94,15 @@ export default class Todo extends Component {
 
   handleGetId() {
     let getId = getAttribute("data-id")
-    console.log(getId)
-
   }
 
   handleChange(e) {
     let name = localStorage.getItem('name')
     let surName= localStorage.getItem('surName')
-    // let name = ''
-    // let surName= ''
     this.setState({
       description: e.target.value,
       parent: `${name} ${surName}`
     })
-    //console.log(this.state.parent)
   }
 
   handleAdd() {
@@ -113,8 +147,8 @@ export default class Todo extends Component {
     this.setState({
       girlName: todo.description,
       nameId: todo._id
-    }, () => console.log(this.state.nameId));
-    // console.log(this.state.nameId)
+    })
+    // }, () => console.log(this.state.nameId));
   }
 
   render(){
@@ -134,6 +168,11 @@ export default class Todo extends Component {
           boyName={this.state.boyName}
           girlName={this.state.girlName}
           nameId={this.state.nameId}
+          toggleChangeBoy={this.toggleChangeBoy}
+          toggleChangeGirl={this.toggleChangeGirl}
+          showConfirm={this.state.showConfirm}
+          showShadow={this.state.showShadow}
+          hideConfirmBox={this.hideConfirmBox}
           />
       </span>
     )
