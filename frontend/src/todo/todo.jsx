@@ -22,17 +22,19 @@ export default class Todo extends Component {
       description: 'description',
       list: [],
       boyName: 'Benino',
-      girlName: 'benina'
+      girlName: 'benina',
+      nameId: ''
     }
 
     this.handleChange = this.handleChange.bind(this)
     this.handleSearch = this.handleSearch.bind(this)
     this.handleMarkAsDone = this.handleMarkAsDone.bind(this)
-    this.handleMarkAsPending = this.handleMarkAsPending.bind(this)
     this.handleAdd = this.handleAdd.bind(this)
+    this.handleAddParent = this.handleAddParent.bind(this)
     this.handleRemove = this.handleRemove.bind(this)
     this.setBoyName = this.setBoyName.bind(this)
     this.setGirlName = this.setGirlName.bind(this)
+    this.handleGetId = this.handleGetId.bind(this)
 
     this.refresh()
 
@@ -43,7 +45,7 @@ export default class Todo extends Component {
 
   refresh(description = '') {
     const search = description ? `&description__regex=/${description}/` : ''
-    axios.get(URL)
+    axios.get(`${URL}?sort=createAt${search}`)
       .then(resp => this.setState({...this.state, description, list: resp.data}))
   }
 
@@ -51,11 +53,17 @@ export default class Todo extends Component {
     this.refresh(this.state.description)
   }
 
+  handleGetId() {
+    let getId = getAttribute("data-id")
+    console.log(getId)
+
+  }
+
   handleChange(e) {
-    // let name = localStorage.getItem('name')
-    // let surName= localStorage.getItem('surName')
-    let name = ''
-    let surName= ''
+    let name = localStorage.getItem('name')
+    let surName= localStorage.getItem('surName')
+    // let name = ''
+    // let surName= ''
     this.setState({
       description: e.target.value,
       parent: `${name} ${surName}`
@@ -65,12 +73,17 @@ export default class Todo extends Component {
 
   handleAdd() {
     const description = this.state.description
-    const parent = this.state.parent
     axios.post(URL, {
       description,
-      parent,
-      done:true
+      done:false
     })
+      .then(resp => this.refresh())
+  }
+
+  handleAddParent() {
+    const parent = this.state.parent
+    const nameId = this.state.nameId
+    axios.put(`${URL}/${nameId}`, {parent, done:true })
       .then(resp => this.refresh())
   }
 
@@ -90,11 +103,18 @@ export default class Todo extends Component {
   }
 
   setBoyName(todo) {
-    this.setState({ boyName: todo.description })
+    this.setState({
+      boyName: todo.description,
+      nameId: todo._id
+    })
   }
 
   setGirlName(todo) {
-    this.setState({ girlName: todo.description })
+    this.setState({
+      girlName: todo.description,
+      nameId: todo._id
+    })
+    console.log(this.state.nameId)
   }
 
   render(){
@@ -103,9 +123,9 @@ export default class Todo extends Component {
         <TodoForm
           list={this.state.list}
           handleMarkAsDone={this.handleMarkAsDone}
-          handleMarkAsPending={this.handleMarkAsPending}
-          handleChange={this.handleChange}
           handleAdd={this.handleAdd}
+          handleChange={this.handleChange}
+          handleAddParent={this.handleAddParent}
           description={this.state.description}
           handleSearch={this.handleSearch}
           handleClear={this.handleClear}
@@ -113,6 +133,7 @@ export default class Todo extends Component {
           setBoyName={this.setBoyName}
           boyName={this.state.boyName}
           girlName={this.state.girlName}
+          nameId={this.state.nameId}
           />
       </span>
     )

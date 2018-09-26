@@ -3,20 +3,21 @@ import IconButton from '../template/iconButton'
 
 
 export default props => {
+
   const renderRows = () => {
     const list = props.list || []
     return list.map(todo => (
+
       <li className={
         todo.done ? 'raffle__selected' : ''}
         key={todo._id}
         >
         <span className="raffle__effect"></span>
         <label htmlFor={todo.description}
-          // onClick={ ()=> props.setGirlName(todo)}
           onClick={ ()=> props.setGirlName(todo)}
         >
           <p className="raffle__name">{todo.description}</p>
-          <small className="raffle__familiar">{todo.parent ? todo.parent : 'vazio'}</small>
+          <small className="raffle__familiar">{todo.parent ? todo.parent : ''}</small>
         </label>
         <input
           className="raffle__radio"
@@ -30,6 +31,7 @@ export default props => {
         <span></span>
       </li>
     ))
+
   }
 
   return (
@@ -74,7 +76,7 @@ export default props => {
         </div>
         <IconButton
             style='raffle-floater__confirm-button'
-            onClick={props.handleAdd}
+            onClick={props.handleAddParent}
             >
         </IconButton>
       </div>
