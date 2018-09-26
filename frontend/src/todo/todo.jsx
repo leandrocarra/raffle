@@ -32,6 +32,7 @@ export default class Todo extends Component {
     this.handleAdd = this.handleAdd.bind(this)
     this.handleRemove = this.handleRemove.bind(this)
     this.setBoyName = this.setBoyName.bind(this)
+    this.setGirlName = this.setGirlName.bind(this)
 
     this.refresh()
 
@@ -42,7 +43,7 @@ export default class Todo extends Component {
 
   refresh(description = '') {
     const search = description ? `&description__regex=/${description}/` : ''
-    axios.get(`${URL}?sort=-createAt${search}`)
+    axios.get(URL)
       .then(resp => this.setState({...this.state, description, list: resp.data}))
   }
 
@@ -51,9 +52,10 @@ export default class Todo extends Component {
   }
 
   handleChange(e) {
-    let name = localStorage.getItem('name')
-    let surName= localStorage.getItem('surName')
-
+    // let name = localStorage.getItem('name')
+    // let surName= localStorage.getItem('surName')
+    let name = ''
+    let surName= ''
     this.setState({
       description: e.target.value,
       parent: `${name} ${surName}`
@@ -67,7 +69,8 @@ export default class Todo extends Component {
     axios.post(URL, {
       description,
       parent,
-      done:true})
+      done:true
+    })
       .then(resp => this.refresh())
   }
 
