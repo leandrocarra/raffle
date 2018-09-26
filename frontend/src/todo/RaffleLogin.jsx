@@ -10,6 +10,9 @@ class RaffleLogin extends Component {
       hide: ''
     }
   }
+  // componentWillMount(){
+  //   displayLogin()
+  // }
   render() {
     const handleSetLoginName = (e) => {
       let loginUserName = e.target.value;
@@ -26,6 +29,11 @@ class RaffleLogin extends Component {
     }
     const displayLogin = () => {
       if (this.state.userName !== '' && this.state.surName !== ''){
+        this.setState({
+          hide: 'none'
+        })
+      }
+      if (localStorage.getItem('name') !== '' && localStorage.getItem('surName') !== ''){
         this.setState({
           hide: 'none'
         })
