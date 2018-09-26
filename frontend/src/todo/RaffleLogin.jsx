@@ -6,7 +6,8 @@ class RaffleLogin extends Component {
     super(props)
     this.state = {
       userName: '',
-      surName: ''
+      surName: '',
+      hide: ''
     }
   }
   render() {
@@ -19,13 +20,20 @@ class RaffleLogin extends Component {
       this.setState({surName: loginSurName})
     }
     const handleSetStorageLogin = () => {
-      //console.log(this.state.userName, this.state.surName)
       localStorage.setItem('name', this.state.userName)
       localStorage.setItem('surName', this.state.surName)
+      displayLogin()
+    }
+    const displayLogin = () => {
+      if (this.state.userName !== '' && this.state.surName !== ''){
+        this.setState({
+          hide: 'none'
+        })
+      }
     }
 
     return (
-      <span>
+      <span className={this.state.hide}>
         <div className="raffle-login"></div>
         <div className="raffle-login__container">
           <IconLogin/>

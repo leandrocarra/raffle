@@ -113,8 +113,8 @@ export default class Todo extends Component {
     this.setState({
       girlName: todo.description,
       nameId: todo._id
-    })
-    console.log(this.state.nameId)
+    }, () => console.log(this.state.nameId));
+    // console.log(this.state.nameId)
   }
 
   render(){
