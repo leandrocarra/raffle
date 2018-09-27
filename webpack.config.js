@@ -1,5 +1,6 @@
 const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const PORT = process.env.PORT || 5000
 
 module.exports = {
   entry: './src/index.jsx',
@@ -8,7 +9,7 @@ module.exports = {
     filename: './app.js'
   },
   devServer: {
-    port: process.env.PORT || 8080,
+    port: PORT,
     contentBase: './public'
   },
   resolve: {
