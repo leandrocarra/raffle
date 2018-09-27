@@ -3,7 +3,7 @@ import axios from 'axios'
 
 import TodoForm from './todoForm'
 
-import './css/Reset.css';
+import './css/reset.css';
 import './css/App.css';
 import './css/RaffleGenders.css';
 import './css/RaffleConfirmed.css';
@@ -12,8 +12,8 @@ import './css/RaffleLogin.css';
 import './css/RaffleTop.css';
 import './css/RaffleReward.css';
 
-const URL = 'https://mysterious-earth-93181.herokuapp.com/api/todos'
-const URL_LOCAL = 'http://localhost:3003/api/todos'
+// const URL = 'https://mysterious-earth-93181.herokuapp.com/api/todos'
+const URL = 'http://localhost:3003/api/todos'
 
 export default class Todo extends Component {
   constructor(props) {
