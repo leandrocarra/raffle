@@ -23,11 +23,13 @@ export default class Todo extends Component {
       list: [],
       boyName: 'Benino',
       girlName: 'benina',
-      nameId: '',
+      nameIdGirl: '',
+      nameIdBoy: '',
       boyChecked: false,
       girlChecked: false,
       showShadow: 'none',
-      showConfirm: ''
+      showConfirm: '',
+      showSuccess: ''
     }
 
     this.handleChange = this.handleChange.bind(this)
@@ -43,6 +45,7 @@ export default class Todo extends Component {
     this.toggleChangeGirl = this.toggleChangeGirl.bind(this)
     this.showConfirmBox = this.showConfirmBox.bind(this)
     this.hideConfirmBox = this.hideConfirmBox.bind(this)
+    this.showSuccess = this.showSuccess.bind(this)
 
     this.refresh()
 
@@ -82,6 +85,12 @@ export default class Todo extends Component {
     })
   }
 
+  showSuccess() {
+    this.setState({
+      showSuccess: 'success'
+    })
+  }
+
   refresh(description = '') {
     const search = description ? `&description__regex=/${description}/` : ''
     axios.get(`${URL}?sort=createAt${search}`)
@@ -116,9 +125,15 @@ export default class Todo extends Component {
 
   handleAddParent() {
     const parent = this.state.parent
-    const nameId = this.state.nameId
-    axios.put(`${URL}/${nameId}`, {parent, done:true })
-      .then(resp => this.refresh())
+    const nameIdBoy = this.state.nameIdBoy
+    const nameIdGirl = this.state.nameIdGirl
+    Promise.all([
+      axios.put(`${URL}/${nameIdBoy}`, {parent, done:true }),
+      axios.put(`${URL}/${nameIdGirl}`, {parent, done:true })
+    ])
+    .then(resp => this.refresh())
+    .then(resp => this.showSuccess())
+    // console.log('boy', nameIdBoy, 'girl', nameIdGirl)
   }
 
   handleRemove(todo) {
@@ -139,16 +154,15 @@ export default class Todo extends Component {
   setBoyName(todo) {
     this.setState({
       boyName: todo.description,
-      nameId: todo._id
+      nameIdBoy: todo._id
     })
   }
 
   setGirlName(todo) {
     this.setState({
       girlName: todo.description,
-      nameId: todo._id
+      nameIdGirl: todo._id
     })
-    // }, () => console.log(this.state.nameId));
   }
 
   render(){
@@ -167,12 +181,15 @@ export default class Todo extends Component {
           setBoyName={this.setBoyName}
           boyName={this.state.boyName}
           girlName={this.state.girlName}
+          nameIdGirl={this.state.nameIdGirl}
+          nameIdBoy={this.state.nameIdBoy}
           nameId={this.state.nameId}
           toggleChangeBoy={this.toggleChangeBoy}
           toggleChangeGirl={this.toggleChangeGirl}
           showConfirm={this.state.showConfirm}
           showShadow={this.state.showShadow}
           hideConfirmBox={this.hideConfirmBox}
+          showSuccess={this.state.showSuccess}
           />
       </span>
     )

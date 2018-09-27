@@ -14,7 +14,11 @@ export default props => {
         >
         <span className="raffle__effect"></span>
         <label htmlFor={todo.description}
-          onClick={ ()=> props.setGirlName(todo)}
+          onClick={
+            todo.gender !== 'GIRL' ?
+            () => props.setBoyName(todo) :
+            () => props.setGirlName(todo)
+          }
         >
           <p className="raffle__name">{todo.description}</p>
           <small className="raffle__familiar">{todo.parent ? todo.parent : ''}</small>
@@ -46,28 +50,13 @@ export default props => {
           <div className="raffle__wrapper-boy">
             <ul>
               {renderRows()}
-              {/* <li className='raffle__select' >
-                <span className="raffle__effect"></span>
-                <label htmlFor='VITORIA'>
-                  <p className="raffle__name">VITORIA</p>
-                  <small className="raffle__familiar">Livia Patrezze</small>
-                </label>
-                <input
-                  id='VITORIA'
-                  className="raffl__radio"
-                  placeholder='task here'
-                  value={'VITORIA'}
-                  onChange={props.handleChange}
-                  type="radio"
-                  name="VITORIA"
-                >
-                </input>
-              </li> */}
             </ul>
           </div>
         </div>
       </div>
-      {/* <div className="raffle-floater__shadow"></div> */}
+
+
+
       <div className={`raffle-floater__shadow ${ props.showShadow }`}></div>
       <div className={`raffle-floater ${ props.showConfirm }`}>
         <span className="raffle-floater__close"
@@ -87,6 +76,17 @@ export default props => {
             onClick={props.handleAddParent}
             >
         </IconButton>
+      </div>
+
+      <div className={`raffle-confirmed__box ${ props.showSuccess }`}>
+        <div className="raffle-confirmed">
+          <h1 className="raffle-confirmed__success">Sucesso!</h1>
+          <p className="raffle-confirmed__text">
+            Obrigado por participar da brincadeira,
+            esperamos que vc tenha acertado =)
+          </p>
+        </div>
+        <span className='raffle__image'></span>
       </div>
     </span>
   )

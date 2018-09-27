@@ -7,7 +7,7 @@ class RaffleLogin extends Component {
     this.state = {
       userName: '',
       surName: '',
-      hide: 'none'
+      hide: ''
     }
   }
 
