@@ -3,14 +3,19 @@
   "version": "1.0.0",
   "description": "",
   "main": "src/loader.js",
+  "engines": {
+    "node": "8.1.1",
+    "npm": "5.0.3"
+  },
   "scripts": {
+    "start": "node src/loader.js",
     "dev": "nodemon",
     "production": "pm2 start src/loader.js --name todo-app"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
+  "dependencies": {
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
     "mongoose": "^4.7.0",
