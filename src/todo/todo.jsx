@@ -13,7 +13,7 @@ import './css/RaffleTop.css';
 import './css/RaffleReward.css';
 
 const URL = 'https://mysterious-earth-93181.herokuapp.com/api/todos'
-const URL_LOCAL = http://localhost:3003/api/todos
+const URL_LOCAL = 'http://localhost:3003/api/todos'
 
 export default class Todo extends Component {
   constructor(props) {
