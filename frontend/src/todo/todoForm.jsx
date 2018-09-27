@@ -62,7 +62,7 @@ export default props => {
         <span className="raffle-floater__close"
         onClick={props.hideConfirmBox}
         >X</span>
-        <p className="raffle-floater__title">CONFIRMAÇÃO</p>
+        <p className="raffle-floater__title">EU ACHO QUE É ...</p>
         <div className="raffle-floater__content">
           <div className="raffle-floater__confirm-boy">
               {props.boyName}

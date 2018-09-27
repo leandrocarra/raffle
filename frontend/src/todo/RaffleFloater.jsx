@@ -5,7 +5,7 @@ const RaffleFloater = ({handleAdd}) => (
     <div className="raffle-floater__shadow"></div>
     <div className="raffle-floater">
       <span className="raffle-floater__close">X</span>
-      <p className="raffle-floater__title">CONFIRMAÇÃO</p>
+      <p className="raffle-floater__title">EU ACHO QUE É ...</p>
       <div className="raffle-floater__content">
         <div className="raffle-floater__confirm-boy">
             ALEXANDRE
@@ -18,7 +18,7 @@ const RaffleFloater = ({handleAdd}) => (
         className="raffle-floater__confirm-button"
         type="button"
         onClick={handleAdd}
-        >CONFIRMO</button>
+        >TENHO CERTEZA ABSOLUTA</button>
     </div>
   </span>
 )
