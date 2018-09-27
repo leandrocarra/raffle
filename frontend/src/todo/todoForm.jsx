@@ -56,7 +56,6 @@ export default props => {
       </div>
 
 
-
       <div className={`raffle-floater__shadow ${ props.showShadow }`}></div>
       <div className={`raffle-floater ${ props.showConfirm }`}>
         <span className="raffle-floater__close"
