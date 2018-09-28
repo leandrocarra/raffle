@@ -7,6 +7,8 @@
   position: fixed;
   background-color: #fff;
   opacity: .9;
+  overflow-x: hidden!important;
+  overflow-y: auto!important;
   z-index: 5;
   margin-top: -20vh; }
 
@@ -19,6 +21,8 @@
   padding: 8px;
   margin: -90px auto 0 auto;
   background-color: #061F3E;
+  overflow-x: hidden!important;
+  overflow-y: auto!important;
   z-index: 10;
   right: 0;
   left: 0;
