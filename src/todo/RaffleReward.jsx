@@ -10,7 +10,6 @@ class RaffleReward extends Component {
         </div>
         <div className="raffle__reward">
           <span className="raffle__title-reward">PRÊMIO:___________________________</span>
-          {/*<span className="raffle__title-description">A primeira foto com o Baby</span>*/}
           <span className="raffle__title-description">Brinde especial kit surpresa</span>
         </div>
       </span>
