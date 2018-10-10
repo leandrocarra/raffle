@@ -12,19 +12,8 @@ import './css/RaffleLogin.css';
 import './css/RaffleTop.css';
 import './css/RaffleReward.css';
 
-
-// API - Familia : shrouded-tundra-40513
-// Front - Familia :  mysterious-earth-93181
-
-// API - AMIGOS :
-// Front - AMIGOS : damp-ridge-61602
-
-// Familia
-// const URL = 'https://shrouded-tundra-40513.herokuapp.com/api/todos'
-
-const URL = 'https://damp-ridge-61602.herokuapp.com/api/todos'
-
-// const URL = 'http://localhost:3003/api/todos'
+ const URL = 'https://shrouded-tundra-40513.herokuapp.com/api/todos'
+//const URL = 'http://localhost:3003/api/todos'
 
 export default class Todo extends Component {
   constructor(props) {
